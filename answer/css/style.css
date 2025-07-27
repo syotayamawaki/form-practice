@@ -1,94 +1,111 @@
 @charset "UTF-8";
 
+/* 入力欄・セレクト・ボタンなどの基本スタイルを初期化 */
 input, select, button {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: transparent;
-  border: none;
-  outline: none;
-  padding: 0px;
+  appearance: none; /* 標準のUIを非表示に */
+  -webkit-appearance: none; /* Safari対応 */
+  -moz-appearance: none; /* Firefox対応 */
+  background: transparent; /* 背景を透明に */
+  border: none; /* 枠線なし */
+  outline: none; /* フォーカス時の枠線なし */
+  padding: 0px; /* パディングなし */
 }
 
+/* ページ全体の背景色設定 */
 .wrapper {
-  width: 100%;
-  background: #cff1ff;
+  width: 100%; /* 横幅100% */
+  background: #cff1ff; /* 薄い水色背景 */
 }
 
+/* 中央寄せと横幅制限 */
 .inner {
-  margin: 0 auto;
-  width: 600px;
+  margin: 0 auto;/* 中央寄せ */
+  width: 600px;/* 最大幅600px */
 }
 
+/* セクション見出しのスタイル */
 .content__title {
-  font-size: 18px;
-  color: #000000;
+  font-size: 18px;/* フォントサイズ */
+  color: #000000;/* 黒色 */
 }
 
+/* ラベルのまとまりに上の余白 */
 .label__section {
   margin-top: 25px;
 }
 
+/* ラベル文字のスタイル */
 .label__text {
   font-size: 14px;
-  color: #464646;
+  color: #464646;/* 濃いグレー */
 }
 
+/* 横並びのレイアウトにする */
 .is__flex {
   display: flex;
 }
 
+/* 各フォームセクションの上部余白 */
 .personal__content, .account__content, .contact__content, .subscription__content, .submit__content{
   margin-top: 50px;
 }
 
+/* 必須マークの赤色 */
 .required {
   color: #e40000;
 }
 
+/* ページの一番上の見出し */
 .page__title {
   padding-top: 60px;
   font-size: 28px;
   text-align: center;
 }
 
+/* フォーム全体の囲み */
 .form__wrap {
   padding: 50px;
-  background: #ecfaff;
+  background: #ecfaff;/* 薄い水色背景 */
   margin-top: 60px;
 }
 
+/* フォームのメインタイトル */
 .form__title {
   font-size: 24px;
   text-align: center;
 }
 
+/* テキスト入力欄のデザイン */
 .input__area {
-  width: 100%;
-  height: 35px;
+  width: 100%;/* 横幅100% */
+  height: 35px;/* 高さ */
   margin-top: 6px;
   padding: 5px;
   color: #545658;
-  box-sizing: border-box;
-  border: 1px solid #d9d9d9;
-  background: #fbfbfb;
+  box-sizing: border-box;/* paddingを含めた幅制御 */
+  border: 1px solid #d9d9d9;/* 薄い枠線 */
+  background: #fbfbfb;/* 薄いグレー背景 */
 }
 
+/* 入力欄フォーカス時のスタイル */
 .input__area:focus {
-  background-color: #fff;
-  border-color: rgba(93, 130, 194, 0.4);
-  box-shadow: 0px 0px 0px 2px rgba(1, 90, 191, 0.1);
+  background-color: #fff;/* 白背景に変化 */
+  border-color: rgba(93, 130, 194, 0.4);/* 青みがかった枠線 */
+  box-shadow: 0px 0px 0px 2px rgba(1, 90, 191, 0.1);/* 薄い青の影 */
 }
 
+/* セレクトと性別選択に共通の上余白 */
 .select__area, .gender__area {
   margin-top: 6px;
 }
 
+/* セレクトボックス全体を囲むブロック */
 .select__unit {
   width: 100%;
   position: relative;
 }
 
+/* 擬似要素で下向きの矢印を表示 */
 .select__unit:after {
   content: "";
   position: absolute;
@@ -99,24 +116,28 @@ input, select, button {
   display: inline-block;
   border-bottom: 2px solid #c3c3c3;
   border-right: 2px solid #c3c3c3;
-  transform: rotate(45deg);
+  transform: rotate(45deg);/* 斜めの矢印を作成 */
 }
 
+/* ラジオボタンの各項目に左マージン */
 .gender__element {
   margin-left: 10px;
 }
 
+/* 最初のラジオボタンは左マージン無し */
 .gender__element:first-child {
   margin-left: 0;
 }
 
+/* ラジオボタンの表示ラベル */
 .gender__element span{
   position: relative;
   display: inline-block;
-  padding: 3px 3px 3px 20px;
+  padding: 3px 3px 3px 20px;/* 左にスペースを空ける */
   color: #545658;
 }
 
+/* ラジオボタンの外側の丸 */
 .gender__element span:before {
   content: "";
   position: absolute;
@@ -126,10 +147,11 @@ input, select, button {
   height: 14px;
   background-color: #fbfbfb;
   border: 1px solid #d9d9d9;
-  border-radius: 50%;
+  border-radius: 50%;/* 丸型にする */
   transform: translateY(-50%);
 }
 
+/* ラジオボタンが選択されたときの中の点 */
 .gender__content:checked +
 span:after {
   content: "";
@@ -138,16 +160,18 @@ span:after {
   left: 4px;
   width: 8px;
   height: 8px;
-  background-color: #017cbf;
+  background-color: #017cbf;/* 青色の丸 */
   border-radius: 50%;
   transform: translateY(-50%);
 }
 
+/* チェックボックスのラベル全体 */
 .subscription__label {
   position: relative;
-  padding-left: 25px;
+  padding-left: 25px;/* チェックマークの位置を確保 */
 }
 
+/* チェックボックスの枠 */
 .subscription__label:before {
   content: "";
   position: absolute;
@@ -160,6 +184,7 @@ span:after {
   background: #ffffff;
 }
 
+/* チェックされたときの✔マーク */
 .subscription__unit input:checked + .subscription__label:after {
   content: "";
   position: absolute;
@@ -170,9 +195,10 @@ span:after {
   margin-top: -11px;
   border-right: 3px solid #0140bf;
   border-bottom: 3px solid #0140bf;
-  transform: rotate(45deg);
+  transform: rotate(45deg);/* 右下がりのチェックマーク */
 }
 
+/* ボタン共通のスタイル */
 .btn {
   cursor: pointer;
   display: inline-block;
@@ -182,29 +208,33 @@ span:after {
   font-size: 13px;
   font-weight: 500;
   text-align: center;
-  transition: 0.3s;
+  transition: 0.3s;/* ホバーやクリック時の滑らか変化 */
   padding: 13px;
   width: 100%;
 }
 
+/* 送信ボタンの専用デザイン */
 .btn__submit {
   padding: 13px;
-  background: #0170bf;
-  color: #fff;
+  background: #0170bf;/* 青背景 */
+  color: #fff;/* 白文字 */
 }
 
+/* 送信ボタンクリック時の反転効果 */
 .btn__submit:active {
   background: #fff;
   color: #0170bf;
   border: 1px solid #d9d9d9;
 }
 
+/* 利用規約などの説明文 */
 .other-text {
   margin-top: 25px;
   font-size: 10px
 }
 
+/* ハイパーリンクのカラー設定 */
 .link-color {
-  color: #0170bf;
-  text-decoration: none;
+  color: #0170bf;/* 青色リンク */
+  text-decoration: none;/* 下線なし */
 }
